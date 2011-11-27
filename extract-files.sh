@@ -118,6 +118,7 @@ lib/hw/lights.msm7k.so
 lib/hw/copybit.msm7k.so
 lib/hw/gralloc.msm7k.so
 lib/hw/gps.default.so
+lib/hw/libbcmfm_if.so
 lib/egl/libEGL_adreno200.so
 lib/egl/libGLESv2_adreno200.so
 lib/egl/libGLESv1_CM_adreno200.so
