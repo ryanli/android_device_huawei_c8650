@@ -42,6 +42,7 @@ bin/vold
 bin/modempre
 bin/wpa_supplicant
 bin/wl
+bin/pcm-bridge
 bin/port-bridge
 bin/brcm_patchram_plus
 bin/qmuxd
