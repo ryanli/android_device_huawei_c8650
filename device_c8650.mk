@@ -86,6 +86,12 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8650/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/huawei/c8650/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
+# Keyboard Layout
+PRODUCT_COPY_FILES += \
+    device/huawei/c8650/prebuilt/usr/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
+    device/huawei/c8650/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+    device/huawei/c8650/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
+
 # Other
 PRODUCT_COPY_FILES += \
     device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
