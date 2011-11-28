@@ -85,6 +85,7 @@ lib/libcamera_client.so
 lib/libmmjpeg.so
 lib/libmmipl.so
 lib/libmm-adspsvc.so
+lib/libOmxCore.so
 lib/libOmxAacDec.so
 lib/libOmxWmvDec.so
 lib/libOmxAdpcmDec.so
