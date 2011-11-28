@@ -92,9 +92,10 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8650/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
     device/huawei/c8650/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
 
-# Other
+# Media
 PRODUCT_COPY_FILES += \
-    device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
+    device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/huawei/c8650/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Icon assets
 PRODUCT_LOCALES += mdpi
