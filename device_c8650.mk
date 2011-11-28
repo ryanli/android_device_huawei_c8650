@@ -42,7 +42,7 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVidEnc \
     dexpreopt \
-    gps.c8650 \
+    gps.c8650
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/c8650/overlay
 
