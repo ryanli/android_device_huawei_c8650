@@ -96,8 +96,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv
 
-# LDPI assets
-PRODUCT_LOCALES += ldpi mdpi
+# Icon assets
+PRODUCT_LOCALES += mdpi
 
 PRODUCT_NAME := full_c8650
 PRODUCT_DEVICE := c8650
