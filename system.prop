@@ -74,6 +74,3 @@ ro.com.google.locationfeatures=1
 keyguard.no_require_sim=true
 
 dalvik.vm.heapsize=32m
-
-# set up keyboard layout
-hw.keyboards.65540.devname=surf_keypad
