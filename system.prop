@@ -13,7 +13,8 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 
-ro.cdma.home.operator.numeric=46003
+# 460003 - China Telecom
+ro.cdma.home.operator.numeric=460003
 ro.cdma.voicemail.number=mine
 ro.telephony.default_network=4
 
