@@ -22,11 +22,19 @@
 
 $(call inherit-product-if-exists, vendor/huawei/c8650/c8650-vendor-blobs.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
+# Pick up some sounds - stick with the short list to save space
+# on smaller devices.
+$(call inherit-product-if-exists, frameworks/base/data/sounds/OriginalAudio.mk)
+
+# Get the TTS language packs
+$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
+
+# Enable all languages.
+$(call inherit-product, build/target/product/locales_full.mk)
+
+$(call inherit-product, build/target/product/generic.mk)
 
 $(call inherit-product, device/common/gps/gps_as_supl.mk)
-
-$(call inherit-product-if-exists, device/huawei/c8650/wifi/wifi.mk)
 
 PRODUCT_PACKAGES += \
 	LiveWallpapers \
@@ -39,9 +47,10 @@ PRODUCT_PACKAGES += \
 	SpareParts \
 	Term \
 	libcamera \
-	libOmxCore \
-	libOmxVidEnc \
 	dexpreopt \
+	PinyinIME \
+	libjni_pinyinime \
+	VoiceDialer \
 	gps.c8650
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/c8650/overlay
@@ -99,6 +108,12 @@ PRODUCT_COPY_FILES += \
 
 # Icon assets
 PRODUCT_LOCALES += mdpi
+
+# Additional settings used in all AOSP builds
+PRODUCT_PROPERTY_OVERRIDES := \
+    keyguard.no_require_sim=true \
+    ro.com.android.dateformat=dd-MM-yyyy \
+    ro.com.android.dataroaming=true
 
 PRODUCT_NAME := full_c8650
 PRODUCT_DEVICE := c8650
