@@ -32,7 +32,6 @@ done
 
 # stuck:
 # lib/libloc_api-rpc-qc.so
-# etc/AutoVolumeControl.txt
 # wifi/dhd.ko
 # etc/bluetooth/BCM4329.hcd
 
@@ -50,7 +49,6 @@ bin/vold
 bin/wl
 bin/wpa_supplicant
 etc/apns-conf.xml
-etc/AudioFilter.csv
 etc/firmware/yamato_pfp.fw
 etc/firmware/yamato_pm4.fw
 etc/init.qcom.bt.sh
@@ -58,8 +56,6 @@ etc/init.qcom.coex.sh
 etc/init.qcom.fm.sh
 etc/init.qcom.post_boot.sh
 etc/init.qcom.sdio.sh
-etc/vold.fstab
-etc/wifi/wpa_supplicant.conf
 lib/egl/libEGL_adreno200.so
 lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libGLESv2_adreno200.so
@@ -70,6 +66,8 @@ lib/hw/gralloc.msm7k.so
 lib/hw/libbcmfm_if.so
 lib/hw/lights.msm7k.so
 lib/hw/sensors.default.so
+lib/libaudioalsa.so
+lib/libaudioeq.so
 lib/libauth.so
 lib/libcamera_client.so
 lib/libcameraservice.so
@@ -117,7 +115,19 @@ lib/libomx_m4vdec_sharedlibrary.so
 lib/libomx_mp3dec_sharedlibrary.so
 lib/libomx_sharedlibrary.so
 lib/liboncrpc.so
+lib/libopencore_author.so
+lib/libopencore_common.so
+lib/libopencore_downloadreg.so
+lib/libopencore_download.so
+lib/libopencorehw.so
+lib/libopencore_mp4localreg.so
+lib/libopencore_mp4local.so
+lib/libopencore_net_support.so
+lib/libopencore_player.so
+lib/libopencore_rtspreg.so
+lib/libopencore_rtsp.so
 lib/libpbmlib.so
+lib/libqcomm_omx.so
 lib/libqmi.so
 lib/libqueue.so
 lib/libreference-ril.so
