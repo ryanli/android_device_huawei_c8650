@@ -51,7 +51,8 @@ PRODUCT_PACKAGES += \
 	PinyinIME \
 	libjni_pinyinime \
 	VoiceDialer \
-	gps.c8650
+	gps.c8650 \
+	libreference-ril
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/c8650/overlay
 

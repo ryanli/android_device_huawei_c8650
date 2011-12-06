@@ -130,7 +130,6 @@ lib/libpbmlib.so
 lib/libqcomm_omx.so
 lib/libqmi.so
 lib/libqueue.so
-lib/libreference-ril.so
 lib/libril-qc-1.so
 lib/libril-qcril-hook-oem.so
 lib/libril.so
