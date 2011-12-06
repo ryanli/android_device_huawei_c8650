@@ -31,7 +31,6 @@ for DIR in $DIRS; do
 done
 
 # stuck:
-# lib/libloc_api-rpc-qc.so
 # wifi/dhd.ko
 # etc/bluetooth/BCM4329.hcd
 
@@ -78,10 +77,18 @@ lib/libdiag.so
 lib/libdll.so
 lib/libdsm.so
 lib/libdss.so
+lib/libfm_hal.so
+lib/libfm_volume.so
 lib/libgsdi_exp.so
 lib/libgsl.so
 lib/libgstk_exp.so
+lib/libhwdrm1_jni.so
+lib/libhwdrm1.so
+lib/libhwfotaadapter.so
+lib/libhwnv.so
 lib/libhwrpc.so
+lib/libloc_api-rpc-qc.so
+lib/libmm-abl.so
 lib/libmm-adspsvc.so
 lib/libmm-omxcore.so
 lib/libmmgsdilib.so
@@ -133,6 +140,9 @@ lib/libqueue.so
 lib/libril-qc-1.so
 lib/libril-qcril-hook-oem.so
 lib/libril.so
+lib/libsnd.so
+lib/libsrsprocessing.so
+lib/libuim.so
 lib/libwms.so
 lib/libwmsts.so
 wifi/bcm_loadecho.sh
@@ -143,7 +153,6 @@ wifi/firmware.bin
 wifi/iwconfig
 wifi/iwlist
 wifi/iwpriv
-wifi/nvram.txt
 wifi/nvram.txt
 wifi/udp_server
 "
