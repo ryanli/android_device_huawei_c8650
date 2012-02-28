@@ -48,8 +48,6 @@ PRODUCT_PACKAGES += \
 	Term \
 	libcamera \
 	dexpreopt \
-	PinyinIME \
-	libjni_pinyinime \
 	VoiceDialer \
 	gps.c8650 \
 	libreference-ril
