@@ -76,3 +76,7 @@ ro.com.google.locationfeatures=1
 keyguard.no_require_sim=true
 
 dalvik.vm.heapsize=26m
+
+ro.confg.hw_appsbootversion=C8650V100R001C92B839_APPSBOOT
+ro.confg.hw_appversion=C8650V100R001C92B839_KERNEL
+ro.confg.hw_appfsversion=C8650V100R001C92B839_SYSIMG
