@@ -87,6 +87,7 @@ BOARD_LDPI_RECOVERY := true
 # Audio
 # We use library under libaudio/
 BOARD_USES_GENERIC_AUDIO := false
+TARGET_PROVIDES_LIBAUDIO := true
 
 # RIL
 TARGET_PROVIDES_LIBRIL := true
