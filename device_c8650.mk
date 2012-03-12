@@ -85,10 +85,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/huawei/c8650/prebuilt/kernel:kernel
 
-# OEM logo and boot splash
-PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/media/oemlogo.mbn:system/media/oemlogo.mbn
-
 # Wi-Fi releated
 PRODUCT_COPY_FILES += \
 	device/huawei/c8650/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
@@ -102,11 +98,9 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg \
 	device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/huawei/c8650/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
 	device/huawei/c8650/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
-	device/huawei/c8650/prebuilt/etc/pvplayer.cfg:system/etc/pvplayer.cfg
 
 # Icon assets
 PRODUCT_LOCALES += mdpi
