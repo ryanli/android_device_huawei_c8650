@@ -367,8 +367,9 @@ on boot
 
     class_start default
 
-    # set media.stagefright.enable-player to false so that stagefright is not used
+# set media.stagefright.enable-player to false so that stagefright is not used
     setprop media.stagefright.enable-player false
+
 ## Daemon processes to be run by init.
 ##
 chmod 0664 /dev/accel
@@ -532,7 +533,6 @@ service keystore /system/bin/keystore /data/misc/keystore
     group keystore
     socket keystore stream 666
 
-#M650-13 zhaojunmin plv to iqagent begin
 service iqmsd /system/bin/iqmsd
     disabled
 
@@ -541,8 +541,6 @@ on property:service.iq.active=1
 
 on property:service.iq.active=0
     stop iqmsd
-
-#M650-13 zhaojunmin plv to iqagent end
 
 # START HUAWEI RPC SERVICE
 service oem_rpc_svc /system/bin/oem_rpc_svc
@@ -591,13 +589,11 @@ service hci_dev_down /system/bin/hci_dev_state --dev_down
     disabled 
     oneshot    
 
-    
 service BtWiRfServer /system/xbin/RfTest
     user root
     group bluetooth net_bt_admin system  
     disabled
     oneshot
-    
 
 service btld /system/bin/btld
     user bluetooth system
@@ -606,6 +602,7 @@ service btld /system/bin/btld
 
 service callife /system/bin/callife
     oneshot
+
 chmod 0777 /system/etc/ppp/ip-up-ppp
 chmod 0777  /system/xbin/cplusw
 service  cplusw  /system/xbin/cplusw

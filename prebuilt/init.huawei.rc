@@ -50,9 +50,7 @@ on boot
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
     symlink /persist/qcom_wlan_nv.bin /etc/firmware/wlan/qcom_wlan_nv.bin
-    #/* < DTS2010112200902 hanshirong 20101124 begin */
     setprop wifi.interface eth0
-    #/* DTS2010112200902 hanshirong 20101124 end > */
 
      # Create directories for wiper services
     mkdir /data/wpstiles/ 0777 shell
@@ -64,18 +62,14 @@ on boot
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
-# /* < DTS2011050604004  xuhui 20110509 begin */
 # no need for BCM4329-wifi-bt chip
 #on property:init.svc.bluetoothd=running
 #    write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
 #    start btwlancoex
-# /* DTS2011050604004  xuhui 20110509 end > */
 
-# /* < DTS2011050604004  xuhui 20110509 begin */
 # no need for BCM4329-wifi-bt chip
 #on property:init.svc.bluetoothd=stopped
 #    stop btwlancoex
-# /* DTS2011050604004  xuhui 20110509 end > */
 
 service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init service requested"
     user bluetooth
@@ -97,9 +91,7 @@ service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     oneshot
 
 service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-#/*<DTS2011011000462 lihongbin 20110107 begin*/
 service pcm-bridge /system/bin/pcm-bridge /dev/smd7 /dev/ttyGS1
-#/*DTS2011011000462 lihongbin 20110107 end >*/
 
 service qmuxd /system/bin/qmuxd
 
@@ -153,8 +145,6 @@ on property:init.svc.bootanim=stopped
 service ckpd /system/bin/CKPD-daemon
     onrestart /system/bin/log -t RIL-CKPD -p w "CKPD daemon restarted"
 
-#/*<DTS2010122001653 renjun 20101220 begin*/
-#import DTS2010091303166 from 7x25
 # bugreport is triggered by the KEY_VOLUMEUP and KEY_VOLUMEDOWN keycodes or triggered by projectmenu
 service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     user root
@@ -169,19 +159,13 @@ service applogcat /system/bin/logcat -v time -r 1024 -n 16 -f /sdcard/bugreports
 # kmsglogcat is triggered by projectmenu or setprop
 service kmsglogcat /system/bin/kmsgcat -r 1024 -n 16 -f /sdcard/bugreports/kmsgcat-log
     disabled
-#/*DTS2010122001653 renjun 20101220 end>*/
 
-#/*<DTS2010122805335 renjun 20101228 begin*/
 service modemlogcat /system/bin/diag_mdlog
     disabled
-#/*DTS2010122805335 renjun 20101228 end>*/
 
-#/*<DTS2011011103154 hujun 20110111 begin*/
 # sleeplogcat is triggered by projectmenu or setprop
 service sleeplogcat /system/bin/sleeplogcat -t 10 -p /sdcard/sleeplog/
     disabled
-#/*DTS2011011103154 hujun 20110111 end>*/
-#/*< DTS2011030500947  yanzhijun 20110305 begin */
+
 #start the test_diag support automation and diag in arm11
 service test_diag /system/bin/test_diag
-#/* DTS2011030500947  yanzhijun 20110305 end >*/ 

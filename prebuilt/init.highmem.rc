@@ -1,4 +1,3 @@
-# /* < DTS2011041205852 zhangyancun 2010110412 begin  */
 # Define the oom_adj values for the classes of processes that can be
 # killed by the kernel.  These are used in ActivityManagerService.
 on boot
@@ -33,4 +32,3 @@ on boot
     write /proc/sys/vm/overcommit_memory 1
     write /proc/sys/vm/min_free_order_shift 4
     write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,4096,6144,7168,8192
-# /* DTS2011041205852 zhangyancun 2010110412 end >*/ 
