@@ -17,8 +17,6 @@
 # gpu driver for adreno200 is globally accessible
 /dev/kgsl-3d0                 0666   root       root
 
-# these should not be world writable
-#enable system program access the diag
 /dev/diag                 0666   radio      radio
 /dev/diag_arm9            0660   radio      radio
 /dev/android_adb          0660   adb        adb
@@ -54,6 +52,9 @@
 /dev/msm_pcm_ctl*         0660   system     audio
 /dev/msm_snd*             0660   system     audio
 /dev/msm_mp3*             0660   system     audio
+/dev/msm_aac*             0660   system     audio
+/dev/msm_wma*             0666   system     audio
+/dev/msm_wmapro*          0666   system     audio
 /dev/msm_voicememo        0666   system     audio
 /dev/audience_a1026*      0660   system     audio
 /dev/tpa2018d1*           0660   system     audio
@@ -83,16 +84,16 @@
 /dev/ppp                  0660   radio      vpn
 /dev/tun                  0640   vpn        vpn
 
-# sysfs properties
 /sys/devices/virtual/input/input*   enable      0660  root   input
 /sys/devices/virtual/input/input*   poll_delay  0660  root   input
 
-#huawei modify
 /dev/mtd/mtd2                  0664   system   cache
 
-#/* we change the following line to change the key_test mode to pass the AT&T test
 /dev/key_test                  0664   system   system
 /dev/graphics/                  0666   root   graphics
-#/* we change the following line to change the smem_sleep_log mode to pass the AT&T test
+
+# we change the following line to change the smem_sleep_log mode to pass the AT&T test
 /dev/smem_sleep_log                  0664   system   system
 /dev/pn544                  0660   root   nfc
+
+/dev/msm_preproc_ctl      0660   system audio

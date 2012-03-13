@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#	  http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -42,44 +42,41 @@ PRODUCT_PACKAGES += \
 	VisualizationWallpapers \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
-	librs_jni \
+	FM \
 	Gallery3d \
 	SpareParts \
 	Term \
-	libcamera \
-	dexpreopt \
 	VoiceDialer \
+	libcamera \
+	libOmxCore \
+	libOmxVidEnc \
+	librs_jni \
+	dexpreopt \
 	gps.c8650 \
-	libreference-ril
+	lights.c8650
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/c8650/overlay
 
+# APN
+PRODUCT_COPY_FILES += \
+	device/huawei/c8650/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
+
 # Vold config
 PRODUCT_COPY_FILES += \
+	device/huawei/c8650/prebuilt/etc/vold.conf:system/etc/vold.conf \
 	device/huawei/c8650/prebuilt/etc/vold.fstab:system/etc/vold.fstab
-
-# Hardware permissions
-PRODUCT_COPY_FILES += \
-	frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-	frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-	frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # Init files
 PRODUCT_COPY_FILES += \
 	device/huawei/c8650/prebuilt/init:root/init \
 	device/huawei/c8650/prebuilt/init.rc:root/init.rc \
-	device/huawei/c8650/prebuilt/init.highmem.rc:root/init.highmem.rc \
 	device/huawei/c8650/prebuilt/init.huawei.rc:root/init.huawei.rc \
-	device/huawei/c8650/prebuilt/init.mem.rc:root/init.mem.rc \
 	device/huawei/c8650/prebuilt/ueventd.rc:root/ueventd.rc
+
+# qcom init files
+PRODUCT_COPY_FILES += \
+	device/huawei/c8650/prebuilt/etc/init.qcom.bt.sh:system/etc/init.com.bt.sh \
+	device/huawei/c8650/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.com.post_boot.sh
 
 # Kernel
 PRODUCT_COPY_FILES += \
@@ -100,16 +97,24 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
 	device/huawei/c8650/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/huawei/c8650/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
+	device/huawei/c8650/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+
+# Hardware permissions
+PRODUCT_COPY_FILES += \
+	frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+	frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+	frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+	frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+	frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # Icon assets
-PRODUCT_LOCALES += mdpi
-
-# Additional settings used in all AOSP builds
-PRODUCT_PROPERTY_OVERRIDES := \
-    keyguard.no_require_sim=true \
-    ro.com.android.dateformat=dd-MM-yyyy \
-    ro.com.android.dataroaming=true
+PRODUCT_LOCALES += hdpi mdpi
 
 PRODUCT_NAME := full_c8650
 PRODUCT_DEVICE := c8650

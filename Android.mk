@@ -15,5 +15,5 @@
 LOCAL_PATH := $(call my-dir)
 
 ifneq ($(TARGET_SIMULATOR),true)
-	include $(call all-named-subdir-makefiles,libaudio)
+	include $(call all-named-subdir-makefiles,libaudio liblights libril)
 endif

@@ -27,20 +27,16 @@
 # CPU
 # MSM7627, ARM1136EJ-S
 TARGET_BOARD_PLATFORM := msm7k
-TARGET_ARCH_VARIANT := armv5te-vfp
-TARGET_CPU_ABI := armeabi
-TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp
+TARGET_ARCH_VARIANT := armv6-vfp
+TARGET_CPU_ABI := armeabi-v6l
+TARGET_CPU_ABI2 := armeabi
 
-# Target properties
+# Target information
 TARGET_BOOTLOADER_BOARD_NAME := c8650
 TARGET_OTA_ASSERT_DEVICE := c8650,C8650
 
-# Target information
+# Target properties
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_KERNEL := false
-TARGET_NO_RADIOIMAGE := true
-TARGET_NO_RECOVERY := false
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -55,13 +51,14 @@ BOARD_USES_QCOM_LIBRPC := true
 TARGET_HAVE_TSLIB := true
 
 # Camera
+USE_CAMERA_STUB := true
 BOARD_CAMERA_LIBRARIES := libcamera
 
 # GPS
-# disabled temporarily due to link error
-# BOARD_USES_QCOM_GPS := true
-# BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 3200
-# BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := c8650
+BOARD_USES_QCOM_GPS := true
+BOARD_GPS_LIBRARIES := libloc_api
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := c8650
 
 # Java VM
 WITH_JIT := true
@@ -72,13 +69,8 @@ JS_ENGINE := v8
 
 # USB mass storage
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/huawei/c8650/UsbController.cpp
 BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun
-
-# Sensors
-TARGET_USES_OLD_LIBSENSORS_HAL := true
-BOARD_VENDOR_USE_AKMD := akm8973
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/c8650/recovery/recovery_ui.c
@@ -90,22 +82,19 @@ BOARD_USES_GENERIC_AUDIO := false
 TARGET_PROVIDES_LIBAUDIO := true
 
 # RIL
+# We use library under libril/
 TARGET_PROVIDES_LIBRIL := true
+
+# FM
+BOARD_HAVE_FM_RADIO := true
+BOARD_FM_DEVICE := bcm4329
+BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 # Graphics
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-BOARD_USES_ADRENO_200 := true
-HAVE_ADRENO200_SOURCE := true
-HAVE_ADRENO200_SC_SOURCE := true
-HAVE_ADRENO200_FIRMWARE := true
-TARGET_HARDWARE_3D := false
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
-BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
-TARGET_SF_NEEDS_REAL_DIMENSIONS := true
 BOARD_NO_RGBX_8888 := true
 BOARD_EGL_CFG := device/huawei/c8650/egl.cfg
-BOARD_HAS_LIMITED_EGL := true
-TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 
 # WiFi
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT

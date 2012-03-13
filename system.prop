@@ -18,7 +18,12 @@ ro.opengles.version=131072
 
 ro.com.google.locationfeatures=1
 
-dalvik.vm.heapsize=26m
+ro.sf.lcd_density=160
+
+dalvik.vm.heapsize=32m
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.dexopt-flags=m=y
 
 ro.confg.hw_appsbootversion=C8650V100R001C92B839_APPSBOOT
 ro.confg.hw_appversion=C8650V100R001C92B839_KERNEL
