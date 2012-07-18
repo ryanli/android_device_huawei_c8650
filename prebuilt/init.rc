@@ -7,16 +7,6 @@ sysclktz 0
 
 loglevel 3
 
-    export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
-    export LD_LIBRARY_PATH /vendor/lib:/data/cust/lib:/system/lib:/data/datalib
-    export ANDROID_BOOTLOGO 1
-    export ANDROID_CACHE /cache
-    export ANDROID_ROOT /system
-    export ANDROID_ASSETS /system/app
-    export ANDROID_DATA /data
-    export EXTERNAL_STORAGE /mnt/sdcard
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/core-junit.jar
-
 # Backward compatibility
     symlink /system/etc /etc
     symlink /sys/kernel/debug /d
@@ -47,16 +37,6 @@ loglevel 3
 
     # Directory for staging bindmounts
     mkdir /mnt/secure/staging 0700 root root
-
-    mkdir /mnt/secure/asec  0700 root root
-
-    # Secure container public mount points.
-    mkdir /mnt/asec  0700 root system
-    mount tmpfs tmpfs /mnt/asec mode=0755,gid=1000
-
-    # Filesystem image public mount points.
-    mkdir /mnt/obb 0700 root system
-    mount tmpfs tmpfs /mnt/obb mode=0755,gid=1000
 
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/kernel/hung_task_timeout_secs 0
@@ -119,30 +99,30 @@ on post-fs
     chown root log /data/dontpanic
     chmod 0750 /data/dontpanic
     mkdir /data/HWUserData 0777 system system
-    mount yaffs2 mtd@userdata2 /data/HWUserData nosuid nodev    
+    mount yaffs2 mtd@userdata2 /data/HWUserData nosuid nodev
     chown system system /data/HWUserData
     chmod 0777 /data/HWUserData
-    
+
     mkdir /data/HWUserData/Pictures 0777 system system
     chown system system /data/HWUserData/Pictures
     chmod 0777 /data/HWUserData/Pictures
-    
+
     mkdir /data/HWUserData/Videos 0777 system system
     chown system system /data/HWUserData/Videos
     chmod 0777 /data/HWUserData/Videos
-    
+
     mkdir /data/HWUserData/Recordings 0777 system system
     chown system system /data/HWUserData/Recordings
-    chmod 0777 /data/HWUserData/Recordings 
-    
+    chmod 0777 /data/HWUserData/Recordings
+
     mkdir /data/HWUserData/ContactIcons 0777 system system
     chown system system /data/HWUserData/ContactIcons
-    chmod 0777 /data/HWUserData/ContactIcons   
+    chmod 0777 /data/HWUserData/ContactIcons
     mkdir /data/tmp 0777 system system
 
     chown system system /data/HWUserData/sd.img
     mount vfat loop@data/HWUserData/sd.img /HWUserData umask=0002,uid=1000,gid=1015,utf8
-    
+
     chmod 0664 /dev/light
     chmod 0664 /dev/proximity
     copy /proc/apanic_console /data/dontpanic/apanic_console
@@ -230,7 +210,7 @@ on post-fs
     chown system sdcard_rw /data/drm
     chmod 0775 /data/drm
 
-    mkdir /data/drm/rights 0775 system sdcard_rw 
+    mkdir /data/drm/rights 0775 system sdcard_rw
     chown system sdcard_rw /data/drm/rights
     chmod 0775 /data/drm/rights
     mkdir /data/hwvefs 0775 root sdcard_rw
@@ -253,7 +233,7 @@ on cust
     mkdir /data/cust
     custcopy apk_name_need_to_enable.xml /data/cust/apk_name_need_to_enable.xml
     chmod 0666 /data/cust/apk_name_need_to_enable.xml
-    
+
     custsymlink nv /data/cust/nv
     custdircopy /cust fileManager /HWUserData
     custsymlink wifi /data/cust/wifi
@@ -387,7 +367,7 @@ chmod 0666 /dev/compass_dev
 service ueventd /sbin/ueventd
     critical
 
-service sprint-recovery /system/bin/sprint-recovery    
+service sprint-recovery /system/bin/sprint-recovery
     user root
     group system
     disabled
@@ -562,42 +542,42 @@ service akm8962 /system/bin/akmd8962
 service bcm_hciattach /system/bin/sh /system/etc/bluetooth/init.bcm.bt.sh
     user bluetooth
     group qcom_oncrpc bluetooth net_bt_admin system
-    disabled 
+    disabled
 
 service chip_power_on /system/bin/sh /system/etc/bluetooth/init.bcm.chip_on.sh
     user root
     group system
     disabled
-    oneshot 
-    
+    oneshot
+
 service chip_power_off /system/bin/sh /system/etc/bluetooth/init.bcm.chip_off.sh
     user root
     group system
     disabled
     oneshot
-    
+
 service hci_dev_up /system/bin/hci_dev_state --dev_up
     user root
     group bluetooth system
-    disabled 
+    disabled
     oneshot
-    
+
 service hci_dev_down /system/bin/hci_dev_state --dev_down
     user root
     group bluetooth system
-    disabled 
-    oneshot    
+    disabled
+    oneshot
 
 service BtWiRfServer /system/xbin/RfTest
     user root
-    group bluetooth net_bt_admin system  
+    group bluetooth net_bt_admin system
     disabled
     oneshot
 
 service btld /system/bin/btld
     user bluetooth system
     group bluetooth net_bt_admin system
-    disabled 
+    disabled
 
 service callife /system/bin/callife
     oneshot
