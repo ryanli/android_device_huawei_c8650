@@ -16,7 +16,7 @@
 # limitations under the License.
 
 MANUFACTURER=huawei
-DEVICE=c8650
+DEVICE=u8650
 
 mkdir -p ../../../vendor/$VENDOR/$DEVICE
 

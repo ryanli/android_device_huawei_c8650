@@ -20,7 +20,7 @@
 # product configuration (apps).
 #
 
-$(call inherit-product-if-exists, vendor/huawei/c8650/c8650-vendor-blobs.mk)
+$(call inherit-product-if-exists, vendor/huawei/u8650/u8650-vendor-blobs.mk)
 
 # Pick up some sounds - stick with the short list to save space
 # on smaller devices.
@@ -52,52 +52,52 @@ PRODUCT_PACKAGES += \
 	libOmxVidEnc \
 	librs_jni \
 	dexpreopt \
-	gps.c8650 \
-	lights.c8650
+	gps.u8650 \
+	lights.u8650
 
-DEVICE_PACKAGE_OVERLAYS += device/huawei/c8650/overlay
+DEVICE_PACKAGE_OVERLAYS += device/huawei/u8650/overlay
 
 # APN
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
+	device/huawei/u8650/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
 
 # Vold config
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/vold.conf:system/etc/vold.conf \
-	device/huawei/c8650/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+	device/huawei/u8650/prebuilt/etc/vold.conf:system/etc/vold.conf \
+	device/huawei/u8650/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/init:root/init \
-	device/huawei/c8650/prebuilt/init.rc:root/init.rc \
-	device/huawei/c8650/prebuilt/init.huawei.rc:root/init.huawei.rc \
-	device/huawei/c8650/prebuilt/ueventd.rc:root/ueventd.rc
+	device/huawei/u8650/prebuilt/init:root/init \
+	device/huawei/u8650/prebuilt/init.rc:root/init.rc \
+	device/huawei/u8650/prebuilt/init.huawei.rc:root/init.huawei.rc \
+	device/huawei/u8650/prebuilt/ueventd.rc:root/ueventd.rc
 
 # qcom init files
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/init.qcom.bt.sh:system/etc/init.com.bt.sh \
-	device/huawei/c8650/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.com.post_boot.sh
+	device/huawei/u8650/prebuilt/etc/init.qcom.bt.sh:system/etc/init.com.bt.sh \
+	device/huawei/u8650/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.com.post_boot.sh
 
 # Kernel
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/kernel:kernel
+	device/huawei/u8650/prebuilt/kernel:kernel
 
 # Wi-Fi releated
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-	device/huawei/c8650/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+	device/huawei/u8650/prebuilt/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+	device/huawei/u8650/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Keyboard Layout
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/usr/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
-	device/huawei/c8650/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
-	device/huawei/c8650/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
+	device/huawei/u8650/prebuilt/usr/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
+	device/huawei/u8650/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+	device/huawei/u8650/prebuilt/usr/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
 
 # Media
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-	device/huawei/c8650/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-	device/huawei/c8650/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+	device/huawei/u8650/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+	device/huawei/u8650/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
+	device/huawei/u8650/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Hardware permissions
 PRODUCT_COPY_FILES += \
@@ -116,8 +116,8 @@ PRODUCT_COPY_FILES += \
 # Icon assets
 PRODUCT_LOCALES += hdpi mdpi
 
-PRODUCT_NAME := full_c8650
-PRODUCT_DEVICE := c8650
-PRODUCT_MODEL := C8650
+PRODUCT_NAME := full_u8650
+PRODUCT_DEVICE := u8650
+PRODUCT_MODEL := u8650
 PRODUCT_BRAND := huawei
 PRODUCT_MANUFACTURER := huawei
