@@ -8,23 +8,23 @@ Preparations
 --
 In order to build Cyanogenmod, we must first have 'repo' installed. To install repo, do the following commands:
 
-$ mkdir -p ~/bin
-$ PATH=~/bin:$PATH
-$ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
-$ chmod a+x ~/bin/repo
+	$ mkdir -p ~/bin
+	$ PATH=~/bin:$PATH
+	$ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
+	$ chmod a+x ~/bin/repo
 
 Initialize Repository
 --
 Change to the working directory (referred to as $CM by more experienced developers)
 In this case, the working directory is ~/android/system. You can change this to whatever you feel like, but for now let's leave it as-is.
 
-$ mkdir  ~/android/system
-$ cd ~/android/system/
+	$ mkdir  ~/android/system
+	$ cd ~/android/system/
 
 ...And then initialize the repository.
 
-$ repo init -u git://github.com/alfonsojon/android.git -b gingerbread
-$ repo sync -j16
+	$ repo init -u git://github.com/alfonsojon/android.git -b gingerbread
+	$ repo sync -j16
 
 This is going to take a long time, as it has to fetch around 12 GB of files.
 
@@ -32,15 +32,15 @@ Extract necessary files from phone
 --
 Unfortunately Huawei cannot provide the full source for everything on the phone. This is okay. Just plug in your device, make sure ADB is enabled, and then run the following commands.
 
-$ cd ~/android/system/device/huawei/ascend2/
-$ ./extract-files.sh adb
+	$ cd ~/android/system/device/huawei/ascend2/
+	$ ./extract-files.sh adb
 
 Get Koush's RomManager
 --
 Don't skip this step, it's critical in the build process.
 Run the following command to fetch Koush's RomManager.
 
-$ ~/android/system/vendor/cyanogen/get-rommanager
+	$ ~/android/system/vendor/cyanogen/get-rommanager
 
 Compile Cyanogenmod 7.2
 --
