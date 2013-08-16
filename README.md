@@ -18,7 +18,7 @@ Initialize Repository
 Change to the working directory (referred to as $CM by more experienced developers)
 In this case, the working directory is ~/android/system. You can change this to whatever you feel like, but for now let's leave it as-is.
 
-	$ mkdir  ~/android/system
+	$ mkdir -p ~/android/system
 	$ cd ~/android/system/
 
 ...And then initialize the repository.
