@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),c8650)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),u8650)
 
 LOCAL_PATH:= $(call my-dir)
 # HAL module implemenation, not prelinked and stored in

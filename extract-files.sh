@@ -16,7 +16,7 @@
 # limitations under the License.
 
 VENDOR=huawei
-DEVICE=c8650
+DEVICE=u8650
 
 DIRS="
 bin

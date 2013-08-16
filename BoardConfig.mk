@@ -22,7 +22,7 @@
 #
 
 # inherit from the proprietary version
--include vendor/huawei/c8650/BoardConfigVendor.mk
+-include vendor/huawei/u8650/BoardConfigVendor.mk
 
 # CPU
 # MSM7627, ARM1136EJ-S
@@ -32,8 +32,8 @@ TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 
 # Target information
-TARGET_BOOTLOADER_BOARD_NAME := c8650
-TARGET_OTA_ASSERT_DEVICE := c8650,C8650
+TARGET_BOOTLOADER_BOARD_NAME := u8650
+TARGET_OTA_ASSERT_DEVICE := u8650,u8650
 
 # Target properties
 TARGET_NO_BOOTLOADER := true
@@ -58,7 +58,7 @@ BOARD_CAMERA_LIBRARIES := libcamera
 BOARD_USES_QCOM_GPS := true
 BOARD_GPS_LIBRARIES := libloc_api
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := c8650
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := u8650
 
 # Java VM
 WITH_JIT := true
@@ -72,7 +72,7 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/c8650/recovery/recovery_ui.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/u8650/recovery/recovery_ui.c
 BOARD_LDPI_RECOVERY := true
 
 # Audio
@@ -93,7 +93,7 @@ BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_NO_RGBX_8888 := true
-BOARD_EGL_CFG := device/huawei/c8650/egl.cfg
+BOARD_EGL_CFG := device/huawei/u8650/egl.cfg
 
 # WiFi
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
