@@ -8,7 +8,7 @@ Preparations
 --
 In order to build Cyanogenmod, we must first have 'repo' installed. To install repo, do the following commands:
 
-$ mkdir -p ~/bin ~/android/system
+$ mkdir -p ~/bin
 $ PATH=~/bin:$PATH
 $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
 $ chmod a+x ~/bin/repo
@@ -18,6 +18,7 @@ Initialize Repository
 Change to the working directory (referred to as $CM by more experienced developers)
 In this case, the working directory is ~/android/system. You can change this to whatever you feel like, but for now let's leave it as-is.
 
+$ mkdir  ~/android/system
 $ cd ~/android/system/
 
 ...And then initialize the repository.
