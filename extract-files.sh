@@ -45,6 +45,7 @@ bin/modempre
 bin/oem_rpc_svc
 bin/port-bridge
 bin/qmuxd
+bin/rild
 bin/vold
 bin/wl
 bin/wpa_supplicant
@@ -53,7 +54,6 @@ etc/firmware/yamato_pfp.fw
 etc/firmware/yamato_pm4.fw
 etc/init.qcom.coex.sh
 etc/init.qcom.fm.sh
-etc/init.qcom.post_boot.sh
 etc/init.qcom.sdio.sh
 lib/egl/libEGL_adreno200.so
 lib/egl/libGLESv1_CM_adreno200.so
