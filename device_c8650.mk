@@ -75,8 +75,8 @@ PRODUCT_COPY_FILES += \
 
 # qcom init files
 PRODUCT_COPY_FILES += \
-	device/huawei/c8650/prebuilt/etc/init.qcom.bt.sh:system/etc/init.com.bt.sh \
-	device/huawei/c8650/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.com.post_boot.sh
+	device/huawei/c8650/prebuilt/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+	device/huawei/c8650/prebuilt/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh
 
 # Kernel
 PRODUCT_COPY_FILES += \
